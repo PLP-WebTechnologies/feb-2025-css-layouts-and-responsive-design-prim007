@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Using Flexbox for navigation */
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex; /* Using Flexbox for the main content layout */
+            padding: 20px;
+            gap: 20px; /* Space between main and sidebar */
+        }
+
+        main {
+            flex: 3; /* Main content takes up 3/4 of the available space */
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside {
+            flex: 1; /* Sidebar takes up 1/4 of the available space */
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+            position: sticky; /* Stick the footer to the bottom */
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* Mobile View (up to 600px width) */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column; /* Stack navigation items on mobile */
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
+
+            .container {
+                flex-direction: column; /* Stack main and sidebar on mobile */
+            }
+
+            main, aside {
+                width: 100%; /* Make main and sidebar full width on mobile */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Tablet View (601px to 1024px width) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .container {
+                flex-direction: column; /* Stack main and sidebar on tablets for a cleaner look */
+            }
+
+            main, aside {
+                width: 100%; /* Make main and sidebar full width on tablets */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Desktop View (1025px and above) - The default styles will apply */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Main Content</h1>
+            <p>This is the main content area of the page. It can contain articles, blog posts, or any other primary information. We are using Flexbox to structure this layout, allowing the main content and the sidebar to sit side-by-side on larger screens.</p>
+            <p>Flexbox provides a powerful way to align and distribute space among items in a container. Here, the container is set to `display: flex`, and the `flex` property on the main and aside elements determines how much of the available space they occupy.</p>
+        </main>
+        <aside>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar. It can contain related information, advertisements, navigation links, or other secondary content. On smaller screens, this sidebar will appear below the main content thanks to the media queries we've implemented.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Responsive Layout</p>
+    </footer>
+</body>
+</html>
